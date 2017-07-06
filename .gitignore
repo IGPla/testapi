@@ -1,0 +1,9 @@
+*.pyc
+__pycache__
+properties.py
+fabfile.py
+db.sqlite3
+*~
+*#*
+media
+TODO
