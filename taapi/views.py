@@ -5,9 +5,10 @@ from tacore import mongomodels
 from taapi import serializers
 from django.views.decorators.cache import cache_page
 from django.utils.decorators import method_decorator
+from django.conf import settings
 
 class APICacheView(GenericAPIView):
-    @method_decorator(cache_page(60))
+    @method_decorator(cache_page(settings.CACHE_VIEW_DEFAULT_TIMEOUT))
     def dispatch(self, *args, **kwargs):
         return super(APICacheView, self).dispatch(*args, **kwargs)
         
